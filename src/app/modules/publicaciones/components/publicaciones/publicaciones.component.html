@@ -1,8 +1,9 @@
 
 
-
-
-
+<tr *ngFor="let valor of people2">
+  <td>{{ valor.user.data.id }}</td>
+</tr>
+<!--
 
 <div class="col p-3">
    <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
@@ -14,4 +15,21 @@
                   <a href="#" class="btn btn-primary">Ver</a>
                 </div>
               </div>
+</div></div>
+
+-->
+
+
+
+<div class="col p-3">
+  <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
+
+           <div class="card shadow m-3" style="width: 15rem; height: 20rem;" *ngFor="let persona of people2" >
+               <img src="..." class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">id: {{ persona.id }}</h5>
+                 <p class="card-text">{{ persona.correo}}</p>
+                 <a href="#" class="btn btn-primary">Ver</a>
+               </div>
+             </div>
 </div></div>

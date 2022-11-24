@@ -61,12 +61,15 @@ export class PublicacionesComponent implements OnInit {
     }
   ]
 
+  people2: any[] = [];
 
   constructor(private publicacionesServices: PublicacionesService) {
     
    }
 
   ngOnInit(): void {
+   //Metodo que se ejecuta al cargar el componente
+   //devuelve un json desde la api con publicaciones  
    this.getPublicaciones();    
   }
   
@@ -75,9 +78,11 @@ export class PublicacionesComponent implements OnInit {
     this.publicacionesServices.getPublicaciones()
       .subscribe( (data:any) => {
          console.log("respuesta vacia?: ", data);
-
+          this.people2 = JSON.parse(data.data.rows); 
+          console.log(typeof this.people2);
       }, (error: any) => {
         console.log("error: ", error);
+       
       })      
 
   }
