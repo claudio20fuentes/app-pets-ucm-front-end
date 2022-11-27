@@ -30,7 +30,16 @@ import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.
   ],  
   exports: [
     PublicacionesComponent,
-    PublicacionesAdopcionComponent
+    PublicacionesAdopcionComponent,
+
+    InfoAdopcionComponent,
+    PublicacionesExtraviadosComponent,
+    InfoExtraviadoComponent,
+    InfoEncontradoComponent,
+    PublicacionesEncontradosComponent,
+    FormEncontradoComponent,
+    FormExtraviadoComponent,
+    FormAdopcionComponent
   ],  
   imports: [
     CommonModule,

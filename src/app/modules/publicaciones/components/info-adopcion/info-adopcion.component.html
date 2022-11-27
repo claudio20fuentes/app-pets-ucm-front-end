@@ -1,1 +1,61 @@
-<p>info-adopcion works!</p>
+<div class="row bg-light">
+    <!--encabezado vista imagen texto-->
+</div>
+<div class="container-fluid row">
+    <div class="col-3">
+        <!--
+            lista tarjetas sidebar
+        -->
+        <div class="col ">
+            <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
+          
+                     <div class="card shadow m-3" style="width: 12rem; height: 15rem;"  
+                     *ngFor="let publicaciones of publicationAdoption">
+                         <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
+                         <div class="card-body">
+                           <h5 class="card-title">{{ publicaciones.titulo }}</h5>
+                           <div class="" *ngIf=" publicaciones.categoriaPublicacionId === 1">
+                            <button class="btn btn-sm   busqueda btn-primary">Quiero adoptar</button>   
+                           </div>
+                           <div *ngIf=" publicaciones.categoriaPublicacionId === 2">
+                            <button class="btn form-control busqueda btn-success">Lo encontré</button>
+                           </div>
+                           <div *ngIf=" publicaciones.categoriaPublicacionId === 3">
+                            <button class="btn form-control busqueda btn-warning">Es mi mascota</button>
+                           </div>
+                           
+                         </div>
+                       </div>
+            </div>
+          </div>
+
+    
+    </div>
+    <div class="col-9  p-3">
+        <!--contenedor contacto mascota-->
+
+        <div class="container text-center shadow bg-light">
+            <img class ="shadow "src="../../../../../assets/cachipun2.jpg" alt="" width="400px" height="400">
+            <h3 class="text-center mt-5">Nombre Mascota</h3>
+
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+              </div>
+
+
+              
+<div class="row text-center">
+<label for="">Nombre publicante: </label><label for="">Juanito Perez</label>
+</div>
+
+                <div class="cla"><label></label></div>
+        </div>
+
+
+    </div>
+</div>

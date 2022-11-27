@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
@@ -8,64 +9,10 @@ import { PublicacionesService } from '../../services/publicaciones.service';
 })
 
 export class PublicacionesComponent implements OnInit {
+  //eople2: any[] = [];
+  publications: any[] = [];
 
-  people = [
-
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudia',
-      id: '12'
-    },
-    {
-      name: 'fernanda',
-      id: '21'
-    },
-    {
-      name: 'camilo',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    }
-  ]
-
-  people2: any[] = [];
-
-  constructor(private publicacionesServices: PublicacionesService) {
-    
-   }
+  constructor(private publicacionesServices: PublicacionesService) {}
 
   ngOnInit(): void {
    //Metodo que se ejecuta al cargar el componente
@@ -78,8 +25,16 @@ export class PublicacionesComponent implements OnInit {
     this.publicacionesServices.getPublicaciones()
       .subscribe( (data:any) => {
          console.log("respuesta vacia?: ", data);
-          this.people2 = JSON.parse(data.data.rows); 
-          console.log(typeof this.people2);
+         
+         console.log(data.data.rows[1].id);
+
+         this.publications = data.data.rows;
+         
+         //codigo para user
+         //console.log(data.data.rows[1].userdata.id);
+         //this.people2 = data.data.rows; 
+          //this.people2 = JSON.parse(data.data.rows); 
+          //console.log(typeof this.people2);
       }, (error: any) => {
         console.log("error: ", error);
        

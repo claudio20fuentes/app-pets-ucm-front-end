@@ -1,8 +1,6 @@
 
 
-<tr *ngFor="let valor of people2">
-  <td>{{ valor.user.data.id }}</td>
-</tr>
+
 <!--
 
 <div class="col p-3">
@@ -17,6 +15,9 @@
               </div>
 </div></div>
 
+
+         console.log(data.data.rows[1].userdata.id);
+         this.people2 = data.data.rows; 
 -->
 
 
@@ -24,12 +25,23 @@
 <div class="col p-3">
   <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
 
-           <div class="card shadow m-3" style="width: 15rem; height: 20rem;" *ngFor="let persona of people2" >
-               <img src="..." class="card-img-top" alt="...">
-               <div class="card-body">
-                 <h5 class="card-title">id: {{ persona.id }}</h5>
-                 <p class="card-text">{{ persona.correo}}</p>
-                 <a href="#" class="btn btn-primary">Ver</a>
+           <div class="card bg-light shadow m-3" style="width: 15rem; height: 22rem;" 
+           *ngFor="let publicaciones of publications" >
+               <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
+               <div class="card-body overflow-auto">
+                 <h5 class="card-title text">{{ publicaciones.titulo }}</h5>
+                 <p class="text">{{ publicaciones.descripcion }}</p>
+                 <div class="" *ngIf=" publicaciones.categoriaPublicacionId === 1">
+                  <button class="btn form-control busqueda btn-primary">Quiero adoptar</button>   
+                 </div>
+                 <div *ngIf=" publicaciones.categoriaPublicacionId === 2">
+                  <button class="btn form-control busqueda btn-success">Lo encontré</button>
+                 </div>
+                 <div *ngIf=" publicaciones.categoriaPublicacionId === 3">
+                  <button class="btn form-control busqueda btn-warning">Es mi mascota</button>
+                 </div>
+                 
                </div>
              </div>
-</div></div>
+  </div>
+</div>
