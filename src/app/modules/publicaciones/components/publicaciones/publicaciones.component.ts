@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
-
+import { InfoAdopcionComponent } from '../info-adopcion/info-adopcion.component';
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.component.html',

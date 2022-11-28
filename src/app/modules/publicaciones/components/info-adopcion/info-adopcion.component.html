@@ -1,11 +1,148 @@
+
+<!--VISTA CONTACTO ADOPCIÓN-----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------->
+
+
+
+<!--ESTILOS FONDO DE CONTENEDORES-->
+<br><br><br>
+<div class="card text-bg-dark rounded-0 border border-white shadow">
+  <img src="../../../../../assets/fondo1.jpg" class=" card-img" alt="..." height="270px">
+  <div class="card-img-overlay">
+    <h1 class="card-title text-dark ms-5 my-3">Mascotas en adopción</h1>
+    <p class="card-text text-dark ms-5">This is a wider card with supporting text below as a natural <br>
+      lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text text dark"><small>Last updated 3 mins ago</small></p>
+  </div>
+</div>
+
+
+<style>
+  .color-cabeceras-adopcion{
+    background: #4872CB;
+    
+  }
+</style>
+
+<!--cabezeras del contenedor del contacto y la lista lateral de tarjetas-->
+<div class="row mt-5">
+  <div class="col-3 rounded-3 color-cabeceras-adopcion m-3 mx-auto shadow">
+    <h2 class="text-center text-light">Publicaciones</h2>
+  </div>
+  <div class="col-8 rounded-3 m-3 color-cabeceras-adopcion shadow text-center">
+    <h2 class="text-light">Información del contacto del dueño de la mascota</h2>
+  </div>
+</div>
+
+<!--Contenedor y lista de contactos y publicaciones-->
+
+<div class="row">
+
+<!--
+  LISTA LATERAL QUE CONTIENE LAS TARJETAS DE PUBLICACIONES
+
+  PRIMERA COLUMNA-3
+-->
+
+
+  <div class="col-3 m-3  mx-auto shadow fondo-contenedores">
+    <div class="card shadow mx-auto mt-3" style="width: 15rem; height: 20rem;" *ngFor="let publicaciones of publicationAdoption">
+      <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ publicaciones.titulo }}</h5>
+        <p class="card-text"></p>
+        <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
+       <button class="btn btn-sm busqueda  btn-primary" >Quiero adoptar</button>   
+      </div>
+      <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
+       <button class="btn form-control busqueda btn-success">Lo encontré</button>
+      </div>
+      <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
+       <button class="btn form-control busqueda btn-warning" >Es mi mascota</button>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+<!--
+  SEGUNDA COLUMNA QUE CONTIENE EL CONTENEDOR CON LA INFORMACIÓN DEL DUEÑO DE LA MASCOTA 
+-->
+
+  <div class="col-8 m-3 fondo-contenedores shadow-lg  text-center">
+    <div class="container">
+      <img class="m-3 shadow" src="../assets/5472144.jpg" alt="" width="300px" height="300pxs">
+      <h5 class="m-3 mb-5">Nombre Mascota</h5>
+
+      <div class="col my-3">
+             <label for="">Nombre del publicante : </label><label for="">claudio andres fuentes bustos bustos</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Teléfono : </label><label for="">claudio andres fuentes bustos bustos</label> 
+      </div>
+        <div class="col my-3">
+          <label for="">Fecha de nacimiento : </label><label for="">claudio andres fuentes bustos bustos</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Especie : </label><label for="">claudio andres fuentes bustos bustos</label> 
+ </div>
+ <div class="col my-3">
+   <label for="">Raza : </label><label for="">claudio andres fuentes bustos bustos</label> 
+ </div>
+   <div class="col my-3">
+     <label for="">Tamaño : </label><label for="">claudio andres fuentes bustos bustos</label> 
+ </div>
+ <div class="col my-3">
+  <label for="">Color : </label><label for="">claudio andres fuentes bustos bustos</label> 
+</div>
+<div class="col my-3">
+  <label for="">Descripción : </label><label for="">claudio andres fuentes bustos bustos</label> 
+</div>
+
+<hr class="my-5">
+
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 <div class="row bg-light">
-    <!--encabezado vista imagen texto-->
+    encabezado vista imagen texto
 </div>
 <div class="container-fluid row">
     <div class="col-3">
-        <!--
+    
             lista tarjetas sidebar
-        -->
+   
         <div class="col ">
             <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
           
@@ -32,7 +169,7 @@
     
     </div>
     <div class="col-9  p-3">
-        <!--contenedor contacto mascota-->
+        contenedor contacto mascota
 
         <div class="container text-center shadow bg-light">
             <img class ="shadow "src="../../../../../assets/cachipun2.jpg" alt="" width="400px" height="400">
@@ -59,3 +196,4 @@
 
     </div>
 </div>
+-->

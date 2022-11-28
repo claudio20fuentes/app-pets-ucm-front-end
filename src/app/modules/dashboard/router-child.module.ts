@@ -14,7 +14,7 @@ import { FormAdopcionComponent } from '../publicaciones/components/form-adopcion
 
 const childRoutes: Routes = [
     //{ path: '', component: HomeComponent},
-    { path: 'home', component: HomeComponent },
+    //{ path: 'home', component: HomeComponent },
     { path: 'view-adopcion', component: PublicacionesAdopcionComponent },
     { path: 'view-encontrados', component: PublicacionesEncontradosComponent },
     { path: 'view-extraviados', component: PublicacionesExtraviadosComponent },
@@ -23,8 +23,8 @@ const childRoutes: Routes = [
     { path: 'view-info-extraviado', component: InfoExtraviadoComponent },
     { path: 'view-form-adopcion', component: FormAdopcionComponent },
     { path: 'view-form-encontrado', component: FormEncontradoComponent },
-    { path: 'view-form-extraviado', component: FormExtraviadoComponent }
-   
+    { path: 'view-form-extraviado', component: FormExtraviadoComponent },
+    { path: 'app-publicaciones', component: PublicacionesComponent}   
 ]
 
 @NgModule({

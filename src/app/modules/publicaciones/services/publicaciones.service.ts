@@ -21,14 +21,17 @@ export class PublicacionesService {
     return this.http.get(endpoint); //dependiendo del metodo http
   }
 
-  getPublicacionesPorId(){
+  getPublicacionesAdopciones(){
     const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=1`;
     return this.http.get(endpoint);
   }
 
+  getPublicacionesPorId(id:number){
+    const endpoint = `${base_url}/publicaciones/${id}`;
+    return this.http.get(endpoint);
+  }
+
 }
-
-
 /** 
  *   
  * getPublicaciones(){

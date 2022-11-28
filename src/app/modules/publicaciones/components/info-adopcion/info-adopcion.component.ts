@@ -12,16 +12,20 @@ export class InfoAdopcionComponent implements OnInit {
 
 
   publicationAdoption: any[] = [];
+  publicationAdoptionId: any[] = [];
 
   constructor(private publicacionesServices: PublicacionesService) { }
 
   ngOnInit(): void {
-    this.getPublicacionesPorId();
+    this.getPublicacionesPorId(3);
+    this.getPublicacionesAdopciones();
+    
   }
 
-  getPublicacionesPorId(){
+  //MÉTODO QUE TRAE PUBLICACIONES POR ID TIPO PUBLICACIÓN
+  getPublicacionesAdopciones(){
 
-    this.publicacionesServices.getPublicacionesPorId()
+    this.publicacionesServices.getPublicacionesAdopciones()
       .subscribe( (data:any) => {
         console.log("respuesta vacia?: ", data);
         console.log(data.data.rows[1].id);
@@ -29,6 +33,22 @@ export class InfoAdopcionComponent implements OnInit {
 
       },(error: any) => {
         console.log("error", error)
+
+
       })
   }
+
+  //MÉTODO QUE TRAE una publicacion por id
+  getPublicacionesPorId(id:number){
+    this.publicacionesServices.getPublicacionesPorId(id)
+      .subscribe( (data:any) => {
+        console.log("respuesta id?: ", data);
+        this.publicationAdoptionId = data.data.rows;
+
+      },(error: any) => {
+        console.log("error", error)
+      })
+  }
+
+
 }

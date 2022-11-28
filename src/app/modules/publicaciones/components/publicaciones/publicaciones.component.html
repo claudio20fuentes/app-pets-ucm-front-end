@@ -31,13 +31,13 @@
                <div class="card-body overflow-auto">
                  <h5 class="card-title text">{{ publicaciones.titulo }}</h5>
                  <p class="text">{{ publicaciones.descripcion }}</p>
-                 <div class="" *ngIf=" publicaciones.categoriaPublicacionId === 1">
-                  <button class="btn form-control busqueda btn-primary">Quiero adoptar</button>   
+                 <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
+                  <button class="btn form-control busqueda btn-primary" routerLink="/view-info-adopcion"ng-r ng-click="getPublicacionesPorId(1)" >Quiero adoptar</button>   
                  </div>
-                 <div *ngIf=" publicaciones.categoriaPublicacionId === 2">
+                 <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
                   <button class="btn form-control busqueda btn-success">Lo encontré</button>
                  </div>
-                 <div *ngIf=" publicaciones.categoriaPublicacionId === 3">
+                 <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
                   <button class="btn form-control busqueda btn-warning">Es mi mascota</button>
                  </div>
                  
