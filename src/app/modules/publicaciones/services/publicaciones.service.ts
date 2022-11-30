@@ -26,6 +26,18 @@ export class PublicacionesService {
     return this.http.get(endpoint);
   }
 
+  getPublicacionesEncontrados(){
+    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=2`;
+    return this.http.get(endpoint);
+  }
+
+  getPublicacionesExtraviados(){
+    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=3`;
+    return this.http.get(endpoint);
+  }
+
+
+
   getPublicacionesPorId(id:number){
     const endpoint = `${base_url}/publicaciones/${id}`;
     return this.http.get(endpoint);

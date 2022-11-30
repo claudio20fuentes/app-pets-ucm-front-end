@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { InfoAdopcionComponent } from '../info-adopcion/info-adopcion.component';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-publicaciones',
   templateUrl: './publicaciones.component.html',
-  styleUrls: ['./publicaciones.component.css']
+  styleUrls: ['./publicaciones.component.css'],
 })
 
 export class PublicacionesComponent implements OnInit {

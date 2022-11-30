@@ -1,3 +1,4 @@
+import { PublicacionesService } from './../../services/publicaciones.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoEncontradoComponent implements OnInit {
 
-  constructor() { }
+  publicationEncontrados: any[] = [];
+
+  constructor(private PublicacionesService: PublicacionesService) { }
 
   ngOnInit(): void {
+    this.getPublicacionesEncontrados();
+  }
+
+
+  getPublicacionesEncontrados(){
+
+    this.PublicacionesService.getPublicacionesEncontrados()
+      .subscribe( (data:any) => {
+        console.log("encontrados",data);;
+        console.log(data.data.rows[1].id);
+        this.publicationEncontrados = data.data.rows;
+      },
+        (error: any) => {
+          console.log("error", error)
+  
+  
+        })
+      
+      
+
+
   }
 
 }

@@ -19,7 +19,6 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     PublicacionesModule,
     HttpClientModule,
-
   ]
 })
 export class DashboardModule { }

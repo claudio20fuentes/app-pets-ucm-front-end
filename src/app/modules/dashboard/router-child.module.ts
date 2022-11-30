@@ -1,3 +1,5 @@
+import { DashboardComponent } from './pages/dashboard.component';
+
 import { FormExtraviadoComponent } from './../publicaciones/components/form-extraviado/form-extraviado.component';
 import { FormEncontradoComponent } from './../publicaciones/components/form-encontrado/form-encontrado.component';
 import { InfoExtraviadoComponent } from './../publicaciones/components/info-extraviado/info-extraviado.component';
@@ -13,8 +15,8 @@ import { InfoAdopcionComponent } from '../publicaciones/components/info-adopcion
 import { FormAdopcionComponent } from '../publicaciones/components/form-adopcion/form-adopcion.component';
 
 const childRoutes: Routes = [
-    //{ path: '', component: HomeComponent},
-    //{ path: 'home', component: HomeComponent },
+    //{ path: '', component: DashboardComponent},
+    { path: 'home', component: HomeComponent },
     { path: 'view-adopcion', component: PublicacionesAdopcionComponent },
     { path: 'view-encontrados', component: PublicacionesEncontradosComponent },
     { path: 'view-extraviados', component: PublicacionesExtraviadosComponent },
@@ -24,7 +26,7 @@ const childRoutes: Routes = [
     { path: 'view-form-adopcion', component: FormAdopcionComponent },
     { path: 'view-form-encontrado', component: FormEncontradoComponent },
     { path: 'view-form-extraviado', component: FormExtraviadoComponent },
-    { path: 'app-publicaciones', component: PublicacionesComponent}   
+    { path: 'app-publicaciones', component: PublicacionesComponent }   
 ]
 
 @NgModule({

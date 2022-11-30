@@ -6,7 +6,6 @@
 
 
 
-<!--ESTILOS FONDO DE CONTENEDORES-->
 <br><br><br>
 <div class="card text-bg-dark rounded-0 border border-white shadow">
   <img src="../../../../../assets/fondo1.jpg" class=" card-img" alt="..." height="270px">
@@ -19,6 +18,7 @@
 </div>
 
 
+<!--ESTILOS FONDO DE CONTENEDORES-->
 <style>
   .color-cabeceras-adopcion{
     background: #4872CB;
@@ -54,14 +54,9 @@
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>
         <p class="card-text"></p>
         <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-       <button class="btn btn-sm busqueda  btn-primary" >Quiero adoptar</button>   
+       <button class="btn btn-sm busqueda" [routerLink]="['/dashboard']"  >Quiero adoptar</button>   
       </div>
-      <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
-       <button class="btn form-control busqueda btn-success">Lo encontré</button>
-      </div>
-      <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
-       <button class="btn form-control busqueda btn-warning" >Es mi mascota</button>
-  </div>
+      
 
       </div>
     </div>
