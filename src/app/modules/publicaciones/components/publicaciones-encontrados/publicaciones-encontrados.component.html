@@ -1,30 +1,20 @@
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
-<p>publicaciones-encontrados works!</p>
 
-<div class="container-fluid">
 
-    <img src="" alt="">
-    
-    </div>
-    <p>publicaciones-adopcion works!</p>
-    <div class="col p-3">
-        <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
-                 <div class="card shadow m-3" style="width: 15rem; height: 20rem;" *ngFor="let persona of people" >
-                     <img src="..." class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <h5 class="card-title">id: {{ persona.id }}</h5>
-                       <p class="card-text">{{ persona.name }}</p>
-                       <a href="#" class="btn btn-primary">En adopción</a>
-                     </div>
-                   </div>
-     </div></div>
+<div class="col p-3">
+  <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
+    publicationsAdoptions
+           <div class="card bg-light shadow m-3" style="width: 15rem; height: 22rem;" 
+               *ngFor="let publicaciones of publicationEncontrados" routerLink="view-encontrados">
+               <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
+               
+               <div class="card-body overflow-auto">
+                 <h5 class="card-title text">{{ publicaciones.titulo }}</h5>
+                 <p class="text">{{ publicaciones.descripcion }}</p>
+                 <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
+                  <button class="btn form-control busqueda btn-success">Lo encontré</button>
+                 </div>
+               </div>
+             </div>
+  </div>
+</div>
+

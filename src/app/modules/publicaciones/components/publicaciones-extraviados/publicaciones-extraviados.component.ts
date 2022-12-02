@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
   selector: 'app-publicaciones-extraviados',
@@ -6,60 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicaciones-extraviados.component.css']
 })
 export class PublicacionesExtraviadosComponent implements OnInit {
-  people = [
-
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudia',
-      id: '12'
-    },
-    {
-      name: 'fernanda',
-      id: '21'
-    },
-    {
-      name: 'camilo',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    }
-  ]
-  constructor() { }
+  publicationExtraviados: any[] = [];
+  constructor(private publicacionesServices: PublicacionesService) { }
 
   ngOnInit(): void {
+
+    this.getPublicacionesExtraviados();
+    
+  }
+
+  getPublicacionesExtraviados(){
+
+    this.publicacionesServices.getPublicacionesExtraviados()
+    .subscribe( (data:any) =>{
+      console.log("respuesta vacia?: ", data);
+         
+      console.log(data.data.rows[1].id);
+
+      this.publicationExtraviados = data.data.rows;
+      
+      //codigo para user
+      //console.log(data.data.rows[1].userdata.id);
+      //this.people2 = data.data.rows; 
+       //this.people2 = JSON.parse(data.data.rows); 
+       //console.log(typeof this.people2);
+   }, (error: any) => {
+     console.log("error: ", error);  
+    })
+
   }
 
 }

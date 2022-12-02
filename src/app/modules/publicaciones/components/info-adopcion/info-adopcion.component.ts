@@ -17,7 +17,7 @@ export class InfoAdopcionComponent implements OnInit {
   constructor(private publicacionesServices: PublicacionesService) { }
 
   ngOnInit(): void {
-    this.getPublicacionesPorId(3);
+    this.getPublicacionesPorId(4);
     this.getPublicacionesAdopciones();
     
   }
@@ -27,7 +27,7 @@ export class InfoAdopcionComponent implements OnInit {
 
     this.publicacionesServices.getPublicacionesAdopciones()
       .subscribe( (data:any) => {
-        console.log("respuesta vacia?: ", data);
+        console.log("respuesta por id?: ", data);
         console.log(data.data.rows[1].id);
         this.publicationAdoption = data.data.rows;
 

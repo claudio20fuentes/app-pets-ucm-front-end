@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
   selector: 'app-publicaciones-encontrados',
@@ -6,60 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publicaciones-encontrados.component.css']
 })
 export class PublicacionesEncontradosComponent implements OnInit {
-  people = [
-
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudia',
-      id: '12'
-    },
-    {
-      name: 'fernanda',
-      id: '21'
-    },
-    {
-      name: 'camilo',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    },
-    {
-      name: 'claudio',
-      id: '12'
-    },
-    {
-      name: 'fernando',
-      id: '21'
-    },
-    {
-      name: 'camila',
-      id: '232'
-    }
-  ]
-  constructor() { }
+  
+  publicationEncontrados: any [] = [];
+  
+  constructor(private publicacionesServices: PublicacionesService) { }
 
   ngOnInit(): void {
+
+this.getPublicacionesEncontrados();
+
   }
 
+  getPublicacionesEncontrados(){
+
+    this.publicacionesServices.getPublicacionesEncontrados()
+    .subscribe( (data:any) => {
+
+      console.log("respuesta" , data);
+      console.log(data.data.rows[1].id);
+
+      this.publicationEncontrados = data.data.rows;
+    }, (error: any) => {
+      console.log("error: ", error);
+    })
+  }
 }

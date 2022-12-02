@@ -11,39 +11,17 @@
                  <p class="text">{{ publicaciones.descripcion }}</p>
                  <p>{{ publicaciones.categoriaPublicacionId }}</p>
                <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
+                <button class="btn form-control btn-primary">Adoptar</button>
                  </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
                   <button class="btn form-control busqueda btn-success">Lo encontré</button>
                  </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
-                  <button class="btn form-control busqueda btn-warning">Es mi mashhhhhcota</button>
+                  <button class="btn form-control busqueda btn-warning">Extraviado</button>
                  </div>
                  
                </div>
              </div>
   </div>
-
-  <div class="list-services">
-    <div class="row text-center">
-        <div class="col p-5 m-5">
-            <a href="" class="p-3 rounded-circle" routerLink="dashboard/view-info-adopcion"><img src="../../../../../assets/dog_512.png"  alt="" height="70px" width="70px"></a>
-            <a href="" class="p-3 rounded-circle" routerLink="view-encontrados"><img src="../../../../../assets/dog_512.png"  alt=""  height="70px" width="70px"></a>
-            <a href="" class="p-3 rounded-circle" routerLink="view-extraviados"><img src="../../../../../assets/dog_512.png"  alt="" height="70px" width="70px"></a>
-            <a href="" class="p-3 rounded-circle"><img src="../../../../../assets/dog_512.png" routerLink="" alt="" height="70px" width="70px"></a>
-            <a href="" class="p-3 rounded-circle" routerLink="view-info-adopcion">g</a>
-        </div>
-    </div>
-</div> 
-
-
-
-
-  
-  <router-outlet></router-outlet>
 </div>
 
-<div>
-  
-
-
-</div>

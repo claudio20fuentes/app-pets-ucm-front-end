@@ -18,7 +18,7 @@ export class PublicacionesService {
 
   getPublicaciones(){
     const endpoint = `${base_url}/publicaciones`;
-    return this.http.get(endpoint); //dependiendo del metodo http
+    return this.http.get(endpoint); //dependiendo del metodo http ?page=1&size=2
   }
 
   getPublicacionesAdopciones(){
