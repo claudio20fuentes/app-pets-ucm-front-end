@@ -12,9 +12,12 @@ const base_url = environment.base_url;
 @Injectable({
   providedIn: 'root'
 })
+
 export class PublicacionesService {
 
   constructor(private http: HttpClient) { }
+
+/*Métodos GET, trae muchas publicaciones*/
 
   getPublicaciones(){
     const endpoint = `${base_url}/publicaciones`;
@@ -36,9 +39,20 @@ export class PublicacionesService {
     return this.http.get(endpoint);
   }
 
-
-
+/*
+Metodos GET POR ID
+*/
   getPublicacionesPorId(id:number){
+    const endpoint = `${base_url}/publicaciones/${id}`;
+    return this.http.get(endpoint);
+  }
+
+  getPublicacionesPorIdExtraviados(id:number){
+    const endpoint = `${base_url}/publicaciones/${id}`;
+    return this.http.get(endpoint);
+  }
+
+  getPublicacionesPorIdEncontrados(id:number){
     const endpoint = `${base_url}/publicaciones/${id}`;
     return this.http.get(endpoint);
   }

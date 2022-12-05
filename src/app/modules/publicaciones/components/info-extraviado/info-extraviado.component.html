@@ -67,7 +67,8 @@
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>
         <p class="card-text"></p>
         <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 3">
-       <button class="btn btn-sm busqueda" [routerLink]="['/dashboard']"  >Quiero adoptar</button>   
+       <button class="btn btn-sm busqueda color-cabeceras-extraviados" 
+       [routerLink]="['/dashboard']"  >Ver mas</button>   
       </div>
       
 
@@ -85,7 +86,8 @@
         <h5 class="m-3 mb-5">Nombre del Dueño</h5>
   
         <div class="col my-3">
-               <label for="">Teléfono : </label><label for="">claudio andres fuentes bustos bustos</label> 
+               <label for="">Teléfono : </label>
+               <label for="">{{ publicacionExtraviadoId.animalId }}</label> 
         </div>
         <div class="col my-3">
           <label for="">Correo : </label><label for="">claudio andres fuentes bustos bustos</label> 

@@ -54,7 +54,7 @@
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>
         <p class="card-text"></p>
         <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-       <button class="btn btn-sm busqueda" [routerLink]="['/dashboard']"  >Quiero adoptar</button>   
+       <button class="btn btn-sm busqueda btn-primary" [routerLink]="['/dashboard']" >Quiero adoptar</button>   
       </div>
       
 
@@ -72,7 +72,7 @@
       <h5 class="m-3 mb-5">Nombre Mascota</h5>
 
       <div class="col my-3">
-             <label for="">Nombre del publicante : </label><label for="">publicationAdoptionId.id</label> 
+             <label for="">Nombre del publicante : </label>{{ publicationw }}<label for=""></label> 
       </div>
       <div class="col my-3">
         <label for="">Teléfono : </label><label for="">claudio andres fuentes bustos bustos</label> 
@@ -93,7 +93,7 @@
   <label for="">Color : </label><label for="">claudio andres fuentes bustos bustos</label> 
 </div>
 <div class="col my-3">
-  <label for="">Descripción : </label><label for="">claudio andres fuentes bustos bustos</label> 
+  <label for="">Descripción : </label><label for="">{{ publicationw.descripcion }}</label> 
 </div>
 
 <hr class="my-5">

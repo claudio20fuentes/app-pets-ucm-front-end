@@ -10,16 +10,27 @@ import { NonNullableFormBuilder } from '@angular/forms';
 })
 export class InfoAdopcionComponent implements OnInit {
 
-
   publicationAdoption: any[] = [];
   publicationAdoptionId: any[] = [];
+
+  publicationw = {
+    id: Number,
+    titulo: String,
+    descripcion: String,
+    cratedAt: Date,
+    updatedAt: Date,
+    userId: Number,
+    categoriaPublicacionId: Number,
+    estadoId: Number,
+    animalId: Number,
+    comunaId: Number  
+  }
 
   constructor(private publicacionesServices: PublicacionesService) { }
 
   ngOnInit(): void {
     this.getPublicacionesPorId(4);
-    this.getPublicacionesAdopciones();
-    
+    this.getPublicacionesAdopciones();   
   }
 
   //MÉTODO QUE TRAE PUBLICACIONES POR ID TIPO PUBLICACIÓN
@@ -27,14 +38,11 @@ export class InfoAdopcionComponent implements OnInit {
 
     this.publicacionesServices.getPublicacionesAdopciones()
       .subscribe( (data:any) => {
-        console.log("respuesta por id?: ", data);
-        console.log(data.data.rows[1].id);
+        //console.log("Data de distintas publicaciones: ", data);
+        //console.log(data.data.rows[1].id);
         this.publicationAdoption = data.data.rows;
-
       },(error: any) => {
         console.log("error", error)
-
-
       })
   }
 
@@ -42,13 +50,11 @@ export class InfoAdopcionComponent implements OnInit {
   getPublicacionesPorId(id:number){
     this.publicacionesServices.getPublicacionesPorId(id)
       .subscribe( (data:any) => {
-        console.log("respuesta id?: ", data);
-        this.publicationAdoptionId = data.data.rows;
-
+        console.log("Data por id: ", data.data);
+        this.publicationw = data.data;
+        console.log(this.publicationw.animalId);
       },(error: any) => {
         console.log("error", error)
       })
   }
-
-
 }
