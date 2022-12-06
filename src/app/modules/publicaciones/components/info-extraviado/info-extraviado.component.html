@@ -66,7 +66,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>
         <p class="card-text"></p>
-        <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 3">
+        <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 2">
        <button class="btn btn-sm busqueda color-cabeceras-extraviados" 
        [routerLink]="['/dashboard']"  >Ver mas</button>   
       </div>
@@ -80,39 +80,48 @@
     SEGUNDA COLUMNA QUE CONTIENE EL CONTENEDOR CON LA INFORMACIÓN DEL DUEÑO DE LA MASCOTA 
   -->
   
-    <div class="col-8 m-3 fondo-contenedores shadow-lg  text-center">
-      <div class="container">
-        <img class="m-3 shadow" src="../assets/5472144.jpg" alt="" width="300px" height="300pxs">
-        <h5 class="m-3 mb-5">Nombre del Dueño</h5>
-  
-        <div class="col my-3">
-               <label for="">Teléfono : </label>
-               <label for="">{{ publicacionExtraviadoId.animalId }}</label> 
-        </div>
-        <div class="col my-3">
-          <label for="">Correo : </label><label for="">claudio andres fuentes bustos bustos</label> 
-        </div>
-          <div class="col my-3">
-            <label for="">Lugar de extravío : </label><label for="">claudio andres fuentes bustos bustos</label> 
-        </div>
-        <div class="col my-3">
-          <label for="">Nombre de la mascota : </label><label for="">claudio andres fuentes bustos bustos</label> 
-   </div>
-   <div class="col my-3">
-     <label for="">Número de chip : </label><label for="">claudio andres fuentes bustos bustos</label> 
-   </div>
-     <div class="col my-3">
-       <label for="">Especie : </label><label for="">claudio andres fuentes bustos bustos</label> 
-   </div>
-   <div class="col my-3">
-    <label for="">Sexo : </label><label for="">claudio andres fuentes bustos bustos</label> 
-  </div>
-  <div class="col my-3">
-    <label for="">Color : </label><label for="">claudio andres fuentes bustos bustos</label> 
-  </div>
-  <div class="col my-3">
-    <label for="">Observaciones : </label><label for="">claudio andres fuentes bustos bustos</label> 
-  </div>
+  <div class="col-8 m-3 fondo-contenedores shadow-lg  text-center">
+    <div class="container">
+      <img class="m-3 shadow" src="{{ publicationId.images[0].regular }}" alt="" width="300px" height="300pxs">
+      <h5 class="m-3 mb-5">{{ publicationId.animal.nombre  }}</h5>
+      <div class="col my-3">
+        <h3>{{ publicationId.titulo }}</h3>
+ </div>
+ <h3>Información del contacto: </h3>
+      <div class="col my-3">
+             <label for="">Nombre del publicante : </label>
+             <label for="">{{ publicationId.user.userdata.nombre }}</label> 
+             <label for="">{{ publicationId.user.userdata.apellido_paterno }}</label> 
+             <label for="">{{ publicationId.user.userdata.apellido_materno }}</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Descripción : </label>
+        <label for="">{{ publicationId.descripcion }}</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Correo : </label>
+        <label for="">{{ publicationId.user.correo }}</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Teléfono : </label>
+        <label for="">{{ publicationId.user.userdata.telefono.numero }}</label> 
+      </div>
+      <div class="col my-3">
+        <label for="">Dirección : </label>
+        <label for="">{{ publicationId.user.userdata.direccion.nombre }}</label> 
+      </div>
+ <h3>Información de la mascota: </h3>
+
+      <div class="col my-3">
+        <label for="">Nombre mascota : </label><label for="">{{ publicationId.animal.nombre  }}</label> 
+ </div>
+ <div class="col my-3">
+   <label for="">Raza : </label><label for="">{{ publicationId.animal.raza.nombre  }}</label> 
+ </div>
+ <div class="col my-3">
+  <label for="">Sexo : </label><label for="">{{ publicationId.animal.sexo.nombre }}</label> 
+</div>
+
   
   <hr class="my-5">
   

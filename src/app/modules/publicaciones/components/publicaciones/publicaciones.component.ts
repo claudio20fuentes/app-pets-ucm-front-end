@@ -42,4 +42,16 @@ export class PublicacionesComponent implements OnInit {
       })      
 
   }
+
+  ver(id:number){
+    data:{id:id}
+  }
+
 }
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-import { PruebitaComponent } from './../prueba/pruebita/pruebita.component';
+import { PruebitaComponent } from './prueba/pruebita/pruebita.component';
 import { DashboardComponent } from './pages/dashboard.component';
 
 import { FormExtraviadoComponent } from './../publicaciones/components/form-extraviado/form-extraviado.component';
@@ -11,13 +11,14 @@ import { PublicacionesAdopcionComponent } from './../publicaciones/components/pu
 import { PublicacionesComponent } from './../publicaciones/components/publicaciones/publicaciones.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes  } from '@angular/router';
 import { InfoAdopcionComponent } from '../publicaciones/components/info-adopcion/info-adopcion.component';
 import { FormAdopcionComponent } from '../publicaciones/components/form-adopcion/form-adopcion.component';
 
 const childRoutes: Routes = [
    // { path: '', component: DashboardComponent},
     //{ path: '**', component: DashboardComponent},
+    { path: '', component: PublicacionesComponent },   
     { path: 'home', component: HomeComponent },
     { path: 'view-adopcion', component: PublicacionesAdopcionComponent },
     { path: 'view-encontrados', component: PublicacionesEncontradosComponent },

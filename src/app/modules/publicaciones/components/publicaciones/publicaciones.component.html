@@ -3,7 +3,7 @@
   <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
 
            <div class="card bg-light shadow m-3" style="width: 15rem; height: 22rem;" 
-               *ngFor="let publicaciones of publications" routerLink="view-info-adopcion" >
+               *ngFor="let publicaciones of publications" >
                <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
                
                <div class="card-body overflow-auto">
@@ -11,13 +11,13 @@
                  <p class="text">{{ publicaciones.descripcion }}</p>
                  <p>{{ publicaciones.categoriaPublicacionId }}</p>
                <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-                <button class="btn form-control btn-primary">Adoptar</button>
+                <button class="btn form-control btn-primary" routerLink="view-info-adopcion" (click)="ver(publicaciones.id)">Adoptar</button>
                  </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
-                  <button class="btn form-control busqueda btn-success">Lo encontré</button>
+                  <button class="btn form-control busqueda btn-success" routerLink="view-info-encontrado">Lo encontré</button>
                  </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
-                  <button class="btn form-control busqueda btn-warning">Extraviado</button>
+                  <button class="btn form-control busqueda btn-warning" routerLink="view-info-extraviado">Extraviado</button>
                  </div>
                  
                </div>

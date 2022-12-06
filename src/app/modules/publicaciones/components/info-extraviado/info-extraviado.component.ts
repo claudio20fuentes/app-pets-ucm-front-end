@@ -23,10 +23,106 @@ export class InfoExtraviadoComponent implements OnInit {
     comunaId: Number  
   }
 
+  publicationId = {
+
+    animal: {
+      categoriaMascotaId: Number,
+      createdAt: Date,
+      edad: {
+        años: Number,
+        createdAt: Date,
+        id:Number,
+        updateAt: Date
+      },
+      raza: {
+        createdAt: Date,
+        id:Number,
+        nombre: String,
+        updateAt: Date 
+      },
+      sexo: {
+        createdAt: Date,
+        id:Number,
+        nombre:String,
+        updateAt: Date
+      },
+      edadId: Number,
+      id: Number,
+      nombre: Number,
+      razaId: Number,
+      sexoId: Number,
+      updatedAt: Date
+    },
+    comuna:{
+      ciudadId: Number,
+      createdAt: Date,
+      id: Number,
+      nombre: String,
+      updateAt: Date
+    },
+
+    id: Number,
+    titulo: String,
+    descripcion: String,
+    cratedAt: Date,
+    updatedAt: Date,
+    userId: Number,
+    categoriaPublicacionId: Number,
+    estadoId: Number,
+    animalId: Number,
+    comunaId: Number,
+
+    images: [{
+      createdAt: Date,
+      id: Number,
+      publicacionId: Number,
+      regular: String,
+      square: String,
+      updatetedAt: String  
+    }],
+    
+    user: {
+      contrasena: String,
+      correo: String,
+      createdAd: String,
+      estadoId: Number,
+      id: Number,
+      updatedAt: Date,
+      userDataId: Number,
+
+      userdata: {
+        apellido_materno: String,
+        apellido_paterno: String,
+        createdAt: Date,
+        direccionId: Number,
+        id: Number,
+        nombre: String,
+        telefonoId: Number,
+        updatedAt: Date,
+        
+        direccion:{
+          comunaId: Number,
+          createdAt: String,
+          id: Number,
+          nombre: String,
+          numero: Number,
+          updatedAt: Date
+        },
+        telefono:{
+          createdAt: Date,
+          id: Number,
+          numero: Number,
+          updatedAt: Date
+        }
+      },
+    }
+  }
+
   constructor(private PublicacionesService: PublicacionesService) { }
 
   ngOnInit(): void {
     this.getPublicacionesExtraviados();
+    this.getPublicacionesPorIdExtraviados(1);
   }
 
   getPublicacionesExtraviados(){
@@ -44,8 +140,8 @@ export class InfoExtraviadoComponent implements OnInit {
     this.PublicacionesService.getPublicacionesPorIdExtraviados(id)
     .subscribe( ( data:any ) => {
       console.log("Data por id extraviados", data.data);
-      this.publicacionExtraviadoId = data.data;
-      console.log(this.publicacionExtraviadoId);
+      this.publicationId = data.data;
+      console.log(this.publicationId);
     },(error: any) => {
       console.log("error",error)
     }) 

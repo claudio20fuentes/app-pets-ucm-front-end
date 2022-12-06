@@ -30,12 +30,12 @@ export class PublicacionesService {
   }
 
   getPublicacionesEncontrados(){
-    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=2`;
+    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=3`;
     return this.http.get(endpoint);
   }
 
   getPublicacionesExtraviados(){
-    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=3`;
+    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=2`;
     return this.http.get(endpoint);
   }
 
@@ -57,12 +57,23 @@ Metodos GET POR ID
     return this.http.get(endpoint);
   }
 
-}
+
 /** 
+ * 
+ * 
+ * 
+ * 
  *   
  * getPublicaciones(){
     const endpoint = `${base_url}/users`;
     return this.http.get(endpoint); //dependiendo del metodo http
   }
- * 
+ *
+  MÉTODOS POST 
 */
+
+savePublicaciones(){}
+
+
+
+}
