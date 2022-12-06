@@ -49,7 +49,7 @@
 
   <div class="col-3 m-3  mx-auto shadow fondo-contenedores">
     <div class="card shadow mx-auto mt-3" style="width: 15rem; height: 20rem;" 
-    *ngFor="let publicaciones of publicationAdoption">
+    *ngFor="let publicaciones of publicationAdoption | slice:0:3;">
       <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>

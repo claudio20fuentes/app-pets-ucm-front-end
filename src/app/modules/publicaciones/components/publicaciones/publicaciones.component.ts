@@ -47,6 +47,9 @@ export class PublicacionesComponent implements OnInit {
     data:{id:id}
   }
 
+  enviarId(id:Number){  
+  }
+
 }
 
 

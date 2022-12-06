@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { NonNullableFormBuilder } from '@angular/forms';
-
-
+import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-info-adopcion',
   templateUrl: './info-adopcion.component.html',
@@ -13,8 +12,10 @@ export class InfoAdopcionComponent implements OnInit {
   @Input() id: Number=0;
   publicationAdoption: any[] = [];
   publicationAdoptionId: any[] = [];
-  
+  idEx: any;
 
+  imReg: String = "";
+  
   publicationw = {
 
     animal: {
@@ -110,11 +111,16 @@ export class InfoAdopcionComponent implements OnInit {
     }
   }
 
-  constructor(private publicacionesServices: PublicacionesService) { }
+  constructor(private publicacionesServices: PublicacionesService , private rutaActiva: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getPublicacionesPorId(3);
-    this.getPublicacionesAdopciones();   
+
+    console.log(this.rutaActiva.snapshot.paramMap.get('id'));
+    this.idEx = this.rutaActiva.snapshot.paramMap.get('id');
+    this.getPublicacionesPorId(this.idEx);
+    this.getPublicacionesAdopciones();
+    console.log("fdwsfsegreherhrewkjwgkwehehwlehwlhewhwehlewlkh");
+    console.log(this.rutaActiva);   
   }
 
   //MÉTODO QUE TRAE PUBLICACIONES POR ID TIPO PUBLICACIÓN
@@ -131,11 +137,19 @@ export class InfoAdopcionComponent implements OnInit {
   }
   //MÉTODO QUE TRAE una publicacion por id
   getPublicacionesPorId(id:number){
+
+
     this.publicacionesServices.getPublicacionesPorId(id)
       .subscribe( (data:any) => {
         console.log("Data por id: ", data.data);
+
+
+        const regular = data.data.images[0].regular;
+       this.imReg = `http://localhost:3000${regular}`
+
+
         this.publicationw = data.data;
-        console.log(this.publicationw.animal.edad.años);
+        //console.log(this.publicationw.animal.edad.años);
         //console.log(this.publicationw.titulo);
         //console.log(this.publicationw.descripcion);
 

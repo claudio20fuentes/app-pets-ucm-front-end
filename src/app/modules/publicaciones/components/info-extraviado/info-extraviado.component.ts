@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { PublicacionesService } from './../../services/publicaciones.service';
 import { Component, OnInit } from '@angular/core';
 import { ConditionalExpr } from '@angular/compiler';
@@ -8,6 +9,9 @@ import { ConditionalExpr } from '@angular/compiler';
   styleUrls: ['./info-extraviado.component.css']
 })
 export class InfoExtraviadoComponent implements OnInit {
+
+
+  idEx: any;
 
   publicationExtraviado: any[] = [];
   publicacionExtraviadoId = {
@@ -118,11 +122,15 @@ export class InfoExtraviadoComponent implements OnInit {
     }
   }
 
-  constructor(private PublicacionesService: PublicacionesService) { }
+  constructor(private PublicacionesService: PublicacionesService , private rutaActiva: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.rutaActiva.snapshot.paramMap.get('id'));
+    this.idEx = this.rutaActiva.snapshot.paramMap.get('id');
     this.getPublicacionesExtraviados();
-    this.getPublicacionesPorIdExtraviados(1);
+    this.getPublicacionesPorIdExtraviados(this.idEx);
+    console.log("fdwsfsegreherhrewkjwgkwehehwlehwlhewhwehlewlkh");
+    console.log(this.rutaActiva); 
   }
 
   getPublicacionesExtraviados(){

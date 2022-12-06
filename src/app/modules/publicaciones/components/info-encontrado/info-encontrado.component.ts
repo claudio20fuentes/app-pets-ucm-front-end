@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { PublicacionesService } from './../../services/publicaciones.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class InfoEncontradoComponent implements OnInit {
 
   publicationEncontrados: any[] = [];
+
+  idEx: any;
 
   publicationw = {
 
@@ -105,11 +108,16 @@ export class InfoEncontradoComponent implements OnInit {
     }
   }
 
-  constructor(private PublicacionesService: PublicacionesService) { }
+  constructor(private PublicacionesService: PublicacionesService , private rutaActiva: ActivatedRoute) { }
 
   ngOnInit(): void {
+    
+    console.log(this.rutaActiva.snapshot.paramMap.get('id'));
+    this.idEx = this.rutaActiva.snapshot.paramMap.get('id');
+    this.getPublicacionesPorIdEncontrados(this.idEx);
     this.getPublicacionesEncontrados();
-    this.getPublicacionesPorIdEncontrados(2);
+
+
   }
 
 

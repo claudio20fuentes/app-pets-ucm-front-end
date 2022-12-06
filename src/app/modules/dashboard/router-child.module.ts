@@ -23,15 +23,14 @@ const childRoutes: Routes = [
     { path: 'view-adopcion', component: PublicacionesAdopcionComponent },
     { path: 'view-encontrados', component: PublicacionesEncontradosComponent },
     { path: 'view-extraviados', component: PublicacionesExtraviadosComponent },
-    { path: 'view-info-adopcion', component: InfoAdopcionComponent },
-    { path: 'view-info-encontrado', component: InfoEncontradoComponent},
-    { path: 'view-info-extraviado', component: InfoExtraviadoComponent },
+    { path: 'view-info-adopcion/:id', component: InfoAdopcionComponent },
+    { path: 'view-info-encontrado/:id', component: InfoEncontradoComponent},
+    { path: 'view-info-extraviado/:id', component: InfoExtraviadoComponent },
     { path: 'view-form-adopcion', component: FormAdopcionComponent },
     { path: 'view-form-encontrado', component: FormEncontradoComponent },
     { path: 'view-form-extraviado', component: FormExtraviadoComponent },
     { path: 'app-publicaciones', component: PublicacionesComponent},
     { path: 'pruebita', component: PruebitaComponent}   
-
 ]
 
 @NgModule({

@@ -1,4 +1,3 @@
-
 <div class="col p-3">
   <div class="row p-3 d-flex flex-row justify-content-center alig-items-center">
 
@@ -7,18 +6,17 @@
                <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
                
                <div class="card-body overflow-auto">
-                 <h5 class="card-title text">{{ publicaciones.titulo }}</h5>
-                 <p class="text">{{ publicaciones.descripcion }}</p>
-                 <p>{{ publicaciones.categoriaPublicacionId }}</p>
+                 <h3 class="card-title text">{{ publicaciones.titulo | uppercase }}</h3>
+                 <p class="text limitado">{{ publicaciones.descripcion }}</p>
                <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-                <button class="btn form-control btn-primary" routerLink="view-info-adopcion" (click)="ver(publicaciones.id)">Adoptar</button>
+                <button class="btn form-control busqueda btn-primary" [routerLink]="['view-info-adopcion',publicaciones.id]">Adoptar</button>
                  </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 2">
-                  <button class="btn form-control busqueda btn-success" routerLink="view-info-encontrado">Lo encontré</button>
-                 </div>
+                  <button class="btn form-control busqueda btn-warning" [routerLink]="['view-info-extraviado',publicaciones.id]">Extraviado</button>
+                </div>
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
-                  <button class="btn form-control busqueda btn-warning" routerLink="view-info-extraviado">Extraviado</button>
-                 </div>
+                  <button class="btn form-control busqueda btn-success" [routerLink]="['view-info-encontrado',publicaciones.id]">Lo encontré</button>
+                </div>
                  
                </div>
              </div>

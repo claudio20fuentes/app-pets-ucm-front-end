@@ -1,11 +1,7 @@
-
-
 <!--VISTA CONTACTO MASCOTAS ENCONTRADOS-----------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------->
-
-
 <!--ESTILOS FONDO DE CONTENEDORES-->
 <style>
 
@@ -30,8 +26,7 @@
   
   <style>
     .color-cabeceras-extraviados{
-      background: #800080;
-      
+      background: #800080;     
     }
   </style>
   
@@ -58,14 +53,14 @@
  
   <div class="col-3 m-3  mx-auto shadow fondo-contenedores">
     <div class="card shadow mx-auto mt-3" style="width: 15rem; height: 20rem;" 
-    *ngFor="let publicaciones of publicationEncontrados">
+    *ngFor="let publicaciones of publicationEncontrados | slice:0:3;">
       <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{ publicaciones.titulo }}</h5>
-        <p class="card-text"></p>
+        <h3 class="card-title">{{ publicaciones.titulo | uppercase}}</h3>
+        <p class="card-text">{{ publicaciones.nombre }}</p>
       
       <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
-       <button class="btn form-control busqueda btn-warning" >Es mi mascota</button>
+        <button class="btn form-control busqueda btn-success" [routerLink]="['view-info-encontrado',publicaciones.id]">Lo encontré</button>
   </div>
 
       </div>
