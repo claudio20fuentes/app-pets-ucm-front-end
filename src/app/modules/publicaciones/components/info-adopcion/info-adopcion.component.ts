@@ -145,7 +145,7 @@ export class InfoAdopcionComponent implements OnInit {
 
 
         const regular = data.data.images[0].regular;
-       this.imReg = `http://localhost:3000${regular}`
+        this.imReg = `http://localhost:3000${regular}`
 
 
         this.publicationw = data.data;

@@ -68,11 +68,14 @@ Metodos GET POR ID
     const endpoint = `${base_url}/users`;
     return this.http.get(endpoint); //dependiendo del metodo http
   }
- *
-  MÉTODOS POST 
+**
+*Save publicaciones POST
 */
 
-savePublicaciones(){}
+savePublicaciones(body:any){
+  const endpoint = `${base_url}/`;
+  return this.http.post(endpoint, body);
+}
 
 
 
