@@ -18,6 +18,8 @@ export class PublicacionesComponent implements OnInit {
   publications: any[] = [];
   public page!:number;
 
+  
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   obs!: Observable<any>;
@@ -29,8 +31,8 @@ export class PublicacionesComponent implements OnInit {
   ngOnInit(): void {
    //Metodo que se ejecuta al cargar el componente
    //devuelve un json desde la api con publicaciones  
-   this.getPublicaciones(); 
-   
+   this.getPublicaciones();
+
    this.changeDetectorRef.detectChanges();
    this.dataSource.paginator = this.paginator;
    this.obs = this.dataSource.connect();
@@ -43,7 +45,6 @@ export class PublicacionesComponent implements OnInit {
   }
   
   getPublicaciones(){
-
     this.publicacionesServices.getPublicaciones()
       .subscribe( (data:any) => {
          console.log("respuesta vacia?: ", data);
@@ -59,10 +60,21 @@ export class PublicacionesComponent implements OnInit {
           //console.log(typeof this.people2);
       }, (error: any) => {
         console.log("error: ", error);
-       
       })      
-
   }
+
+  getPublicacionesPorCategoria(id:number){
+    this.publicacionesServices.getPublicacionesPorCategoria(id)
+    .subscribe((data:any) => {
+      console.log("respuesta por categoria", data);
+
+      this.publications = data.data.rows;
+    }, (error: any) => {
+      console.log("error: ", error);
+    })
+  }
+
+  //getPublicacionesPorCategoria(id:number)
 
   ver(id:number){
     data:{id:id}

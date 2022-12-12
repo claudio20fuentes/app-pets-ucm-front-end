@@ -39,6 +39,11 @@ export class PublicacionesService {
     return this.http.get(endpoint);
   }
 
+  getPublicacionesPorCategoria(id:number){
+    const endpoint = `${base_url}/publicaciones/?categoriaPublicacionId=${id}`;
+    return this.http.get(endpoint);
+  }
+
 /*
 Metodos GET POR ID
 */
@@ -73,7 +78,7 @@ Metodos GET POR ID
 */
 
 savePublicaciones(body:any){
-  const endpoint = `${base_url}/`;
+  const endpoint = `${base_url}/publicaciones`;
   return this.http.post(endpoint, body);
 }
 

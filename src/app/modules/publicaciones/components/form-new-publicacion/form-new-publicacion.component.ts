@@ -12,8 +12,10 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 })
 export class FormNewPublicacionComponent implements OnInit {
 
+  private fileTmp:any;
 
   public publicacionForm: FormGroup;
+
   estadoFormulario: String  = "";
   
   selectedFile: any;
@@ -43,7 +45,7 @@ TipoAnimalObj = [
 
 razaObj = [
 
-  {tipo:"Desconocido"},
+{tipo:"Desconocido"},
 {tipo:"Pitbull"},
 {tipo:"Siamés"},
 {tipo:"Pastor Alemán"},
@@ -58,8 +60,8 @@ sexoObj = [
 ];
 
   constructor(private publicacionesServices: PublicacionesService,private fb: FormBuilder,
-    private snackBar: MatSnackBar)
-   {
+    private snackBar: MatSnackBar){
+      //CONSTRUCTOR
       this.estadoFormulario = "Agregar",
       this.publicacionForm = this.fb.group({
 
@@ -70,7 +72,8 @@ sexoObj = [
         tipoPub: ['', Validators.required],
         tipoAnimal: ['', Validators.required],
         raza:['', Validators.required],
-        sexo:['', Validators.required]
+        sexo:['', Validators.required],
+        picture: ['', Validators.required]
       });
 
       }
@@ -82,22 +85,19 @@ sexoObj = [
 
   onSave(){
     let data = {
-
       titulo: this.publicacionForm.get('titulo')?.value,
       descripcion: this.publicacionForm.get('descripcion')?.value,
-      nombreMascota: this.publicacionForm.get('nombreMascota')?.value,
+      animal: this.publicacionForm.get('nombreMascota')?.value,
       comuna: this.publicacionForm.get('comuna')?.value,
-      categoriaPublicacion: this.publicacionForm.get('tipoPub')?.value,
-      categoriaAnimal:this.publicacionForm.get('tipoAnimal')?.value,
+      categPubli: this.publicacionForm.get('tipoPub')?.value,
+      categAnimal:this.publicacionForm.get('tipoAnimal')?.value,
       raza:this.publicacionForm.get('raza')?.value,
       sexo:this.publicacionForm.get('sexo')?.value,
-      //picture: this.selectedFile
+      file: this.publicacionForm.get('picture')?.value
     }
 
     console.log(data);
-
     //FALTA METODO DE LA IMAGEN
-
     this.publicacionesServices.savePublicaciones(data)
     .subscribe( (data : any) => {
       console.log("se guardo");
@@ -113,6 +113,15 @@ sexoObj = [
     console.log(this.selectedFile);
     this.nameImg = event.target.files[0].name;
   };
+
+  getFile($event: any): void{
+    console.log($event);
+    const [ file ] = $event.target.files;
+    this.fileTmp = {
+      fileRaw:file,
+      fileName:file.name
+    }
+  }
 /*
   openSnackBar(message: string, action: string : MatSnackBarRef<SimpleSnackBar>){
     return this.snackBar.open(message, action, {

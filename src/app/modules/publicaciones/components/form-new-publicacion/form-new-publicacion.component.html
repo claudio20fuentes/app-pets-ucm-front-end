@@ -1,35 +1,38 @@
-<p>form-new-publicacion works!</p>
+ 
+ <!--
+ <div class="row text-center">
+<h1>Formulario para crear publicación
+</h1>
+  </div>
+
+
+
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<div class="row">
+<div class="row p-1">
     <div class="col-2"></div>
-    <div class="col-8">
+    <div class="col-8 p-2">
   
-      <form>
+      <form> 
         <div class="form-group">
           <label for="exampleFormControlInput1">Título de la publicación</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <input type="text" class="form-control" formControlName="titulo" id="" placeholder="">
         </div>
         <div class="form-group">
           <label for="">Descripción de la publicación</label>
-          <textarea class="form-control" id="" rows="3"></textarea>
+          <textarea class="form-control" formControlName="descripcion" id="" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Nombre de la mascota</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <input type="text" class="form-control" formControlName="nombreMascota" id="" placeholder="">
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Comuna en la que reside</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Talca</option>
-            <option>San clemente</option>
-            <option>San javier</option>
-            <option>Linares</option>
-            <option>Parral</option>
+          <select class="form-control" id="exampleFormControlSelect1" formControlName="comuna">
+            <option  *ngFor="let comuna of comunaObj" 
+            [value]="comuna.nombre">
+              {{ comuna.nombre  }}
+            </option>
           </select>
         </div>
         <div class="form-group">
@@ -53,10 +56,8 @@
         <div class="form-group">
           <label for="exampleFormControlSelect1">Categoría animal</label>
           <select class="form-control" id="exampleFormControlSelect1">
-            <option>Perro</option>
-            <option>Gato</option>
-            <option>Loro</option>
-            <option>Hamster</option>
+            <option></option> 
+
           </select>
         </div>
         <div class="form-group">
@@ -79,29 +80,32 @@
 
       </form>
     
-    
+
     
     </div>
     <div class="col-2"></div>
   </div>
+     --> 
   
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-  <h2 mat-dialog-title>{{ estadoFormulario }} nueva publicacion</h2>
-
-  <mat-dialog-content>
-
-  <form [formGroup]="publicacionForm">
 
 
+  <style>
+    .container {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+}
+  </style>
 
-    <div class="publicacion-container">   
+  <div></div>
+  <h2 mat-dialog-title class="container">{{ estadoFormulario }} nueva publicacion</h2>
+
+  <mat-dialog-content >
+
+  <form class="container" [formGroup]="publicacionForm">
+
+    <div class="container">   
       <mat-form-field>
         <input matInput placeholder="Titulo" formControlName="titulo" required>
       </mat-form-field>
@@ -162,7 +166,14 @@
           </mat-select>
       </mat-form-field>
     </div>
-<!-- IMAGE
+
+<!--
+<div>
+  <span>
+<input type="file" (change)="getFile($event)">    
+  </span>
+</div>
+-->
     <div>
       <mat-label>Foto:</mat-label>
       <label for="file-upload">
@@ -175,11 +186,11 @@
               formControlName="picture"/> 
               <span>{{ nameImg }}</span>
     </div>
--->
+    
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions>
+<mat-dialog-actions class="container">
   <button mat-button color="primary" (click)="onSave()"
   [disabled]="publicacionForm.invalid">
     <mat-icon>save</mat-icon>Guardar

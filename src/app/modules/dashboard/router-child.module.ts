@@ -33,15 +33,12 @@ const childRoutes: Routes = [
     { path: 'view-form-extraviado', component: FormExtraviadoComponent },
     { path: 'app-publicaciones', component: PublicacionesComponent},
     { path: 'pruebita', component: PruebitaComponent},  
-    { path: 'formNewPublicacion', component: FormNewPublicacionComponent},
-    
-    
+    { path: 'formNewPublicacion', component: FormNewPublicacionComponent},    
 ]
 
 @NgModule({
     imports: [RouterModule.forChild(childRoutes)],
     exports: [RouterModule]
 })
-
 
 export class RouterChildModule { }
