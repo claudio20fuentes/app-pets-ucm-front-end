@@ -3,8 +3,6 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
-
 import { PublicacionesComponent } from './components/publicaciones/publicaciones.component';
 import { PublicacionesAdopcionComponent } from './components/publicaciones-adopcion/publicaciones-adopcion.component';
 import { InfoAdopcionComponent } from './components/info-adopcion/info-adopcion.component';
@@ -16,7 +14,15 @@ import { FormEncontradoComponent } from './components/form-encontrado/form-encon
 import { FormExtraviadoComponent } from './components/form-extraviado/form-extraviado.component';
 import { FormAdopcionComponent } from './components/form-adopcion/form-adopcion.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { FormNewPublicacionComponent } from './components/form-new-publicacion/form-new-publicacion.component';
+import { MaterialModule } from '../shared/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -30,7 +36,11 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     PublicacionesEncontradosComponent,
     FormEncontradoComponent,
     FormExtraviadoComponent,
-    FormAdopcionComponent
+    FormAdopcionComponent,
+    FormNewPublicacionComponent,
+
+
+
   ],  
   exports: [
     PublicacionesComponent,
@@ -42,13 +52,21 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     PublicacionesEncontradosComponent,
     FormEncontradoComponent,
     FormExtraviadoComponent,
-    FormAdopcionComponent
+    FormAdopcionComponent,
+    FormNewPublicacionComponent,
+    MaterialModule 
+
   ],  
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
+
   ] 
 })
 export class PublicacionesModule { 

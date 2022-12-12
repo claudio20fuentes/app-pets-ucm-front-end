@@ -14,13 +14,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes  } from '@angular/router';
 import { InfoAdopcionComponent } from '../publicaciones/components/info-adopcion/info-adopcion.component';
 import { FormAdopcionComponent } from '../publicaciones/components/form-adopcion/form-adopcion.component';
+import { FormNewPublicacionComponent } from '../publicaciones/components/form-new-publicacion/form-new-publicacion.component';
 
 const childRoutes: Routes = [
    // { path: '', component: DashboardComponent},
     //{ path: '**', component: DashboardComponent},
-    { path: '', component: PublicacionesComponent },   
+    { path: '', component: PublicacionesComponent },  
+
     { path: 'home', component: HomeComponent },
-    { path: 'view-adopcion', component: PublicacionesAdopcionComponent },
+    { path: 'view-adopcion', component: PublicacionesAdopcionComponent},
     { path: 'view-encontrados', component: PublicacionesEncontradosComponent },
     { path: 'view-extraviados', component: PublicacionesExtraviadosComponent },
     { path: 'view-info-adopcion/:id', component: InfoAdopcionComponent },
@@ -30,7 +32,10 @@ const childRoutes: Routes = [
     { path: 'view-form-encontrado', component: FormEncontradoComponent },
     { path: 'view-form-extraviado', component: FormExtraviadoComponent },
     { path: 'app-publicaciones', component: PublicacionesComponent},
-    { path: 'pruebita', component: PruebitaComponent}   
+    { path: 'pruebita', component: PruebitaComponent},  
+    { path: 'formNewPublicacion', component: FormNewPublicacionComponent},
+    
+    
 ]
 
 @NgModule({

@@ -18,7 +18,6 @@ export class PublicacionesAdopcionComponent implements OnInit {
     this.getPublicacionesAdopciones();
 
   }
-
   getPublicacionesAdopciones(){
 
     this.publicacionesServices.getPublicacionesAdopciones()

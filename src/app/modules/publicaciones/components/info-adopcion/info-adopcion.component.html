@@ -53,7 +53,10 @@
         <h5 class="card-title">{{ publicaciones.titulo }}</h5>
         <p class="card-text"></p>
         <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-       <button class="btn btn-lg busqueda form-control btn-primary m-2  position-absolute bottom-0 start-50 translate-middle-x" [routerLink]="['/dashboard']" >Quiero adoptar</button>   
+       <button [routerLink]="['/view-info-adopcion',5]"
+       class="btn btn-lg busqueda form-control btn-primary m-2  
+       position-absolute bottom-0 start-50 translate-middle-x" 
+        >Quiero ghgh adoptar</button>   
       </div>
       
 
@@ -96,7 +99,6 @@
         <label for="">{{ publicationw.user.userdata.direccion.nombre }}</label> 
       </div>
  <h3>Información de la mascota: </h3>
-
       <div class="col my-3">
         <label for="">Nombre mascota : </label><label for="">{{ publicationw.animal.nombre  }}</label> 
  </div>

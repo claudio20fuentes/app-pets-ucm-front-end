@@ -17,10 +17,11 @@
                  <div *ngIf=" publicaciones.categoriaPublicacionId == 3">
                   <button class="btn form-control busqueda btn-success" [routerLink]="['view-info-encontrado',publicaciones.id]">Lo encontré</button>
                 </div>
-                 
-               </div>
+               
+              </div>
+              
              </div>
-
-  </div>
+             
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"showFirstLastButtons></mat-paginator>
+            </div>
 </div>
-

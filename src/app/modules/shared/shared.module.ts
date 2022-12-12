@@ -6,11 +6,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListServicesComponent } from './components/list-services/list-services.component';
-
-
-
-
-
+import { MaterialModule } from './material.module';
+import { PublicacionesModule } from '../publicaciones/publicaciones.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +24,9 @@ import { ListServicesComponent } from './components/list-services/list-services.
     CommonModule,
     RouterModule,
     HttpClientModule,
+    MaterialModule ,
+    PublicacionesModule
+
   ]
 })
 export class SharedModule { }

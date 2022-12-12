@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
   selector: 'app-form-adopcion',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAdopcionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formService: PublicacionesService) { }
 
   ngOnInit(): void {
   }

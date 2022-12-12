@@ -1,0 +1,9 @@
+.publicacion-container{
+
+    display:flex;
+    flex-direction: colum;
+}
+
+.publicacion-container > *{
+    width: 100%;
+}

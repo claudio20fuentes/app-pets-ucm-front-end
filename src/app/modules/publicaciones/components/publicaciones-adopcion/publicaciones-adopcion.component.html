@@ -6,13 +6,14 @@
            <div class="card bg-light shadow m-3" style="width: 15rem; height: 22rem;" 
                *ngFor="let publicaciones of publicationsAdoptions" routerLink="view-adopcion">
                <img src="../../../../../assets/cachupin1.jpg" class="card-img-top" alt="...">
-               
                <div class="card-body overflow-auto">
                  <h5 class="card-title text">{{ publicaciones.titulo }}</h5>
                  <p class="text">{{ publicaciones.descripcion }}</p>
                  <p>{{ publicaciones.categoriaPublicacionId }}</p>
                <div class="" *ngIf=" publicaciones.categoriaPublicacionId == 1">
-                <button class="btn form-control btn-primary">Adoptar</button>
+                <button class="btn form-control btn-primary"
+                [routerLink]="['view-info-adopcion',5]">
+                  Adoptar</button>
                  </div>
                </div>
              </div>
